@@ -1,6 +1,11 @@
 package annotation
 
-import "reflect"
+import (
+	"github.com/dengpju/higo-config/config"
+	"reflect"
+)
+
+var Config *config.Configure
 
 type Value struct {
 	tag reflect.StructTag
@@ -11,5 +16,5 @@ func (this *Value) SetTag(tag reflect.StructTag) {
 }
 
 func (this *Value) String() string {
-	return "25"
+	return Config.Get(this.tag.Get("prefix")).(string)
 }
