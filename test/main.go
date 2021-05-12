@@ -13,5 +13,5 @@ func main() {
 }
 
 type Test struct {
-	Age *annotation.Value `prefix:"user.age"`
+	Age *anno.Value `prefix:"user.age"`
 }

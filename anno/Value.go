@@ -1,4 +1,4 @@
-package annotation
+package anno
 
 import (
 	"github.com/dengpju/higo-config/config"
