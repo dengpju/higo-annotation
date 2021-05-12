@@ -16,5 +16,8 @@ func (this *Value) SetTag(tag reflect.StructTag) {
 }
 
 func (this *Value) String() string {
-	return Config.Get(this.tag.Get("prefix")).(string)
+	if Config.Exist(this.tag.Get("prefix")) {
+		return Config.Get(this.tag.Get("prefix")).(string)
+	}
+	return ""
 }
