@@ -27,6 +27,10 @@ func IsAnnotation(t reflect.Type) bool {
 	return false
 }
 
+func Apply()  {
+	
+}
+
 func (this *Annotations) Append(anno Annotation) *Annotations {
 	this.Value[reflect.TypeOf(anno).String()] = anno
 	this.Sort = append(this.Sort, anno)
