@@ -1,15 +1,24 @@
 package anno
 
-import "sync"
+import (
+	"github.com/dengpju/higo-config/config"
+	"sync"
+)
 
 var (
-	AnnoList Annotations
-	once           sync.Once
+	Config   *config.Configure
+	AnnoList *Annotations
+	once     sync.Once
 )
 
 func init() {
 	once.Do(func() {
-		AnnoList = make([]Annotation, 0)
+		Config = config.New()
+		AnnoList = NewAnnotations()
 	})
 	AnnoList.Append(new(Value))
+}
+
+func Get(key string) interface{} {
+	return AnnoList.Get(key)
 }

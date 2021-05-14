@@ -1,23 +1,24 @@
 package anno
 
 import (
-	"github.com/dengpju/higo-config/config"
 	"reflect"
 )
 
-var Config *config.Configure
-
 type Value struct {
-	tag reflect.StructTag
+	Tag reflect.StructTag
+}
+
+func NewValue() *Value {
+	return &Value{}
 }
 
 func (this *Value) SetTag(tag reflect.StructTag) {
-	this.tag = tag
+	this.Tag = tag
 }
 
 func (this *Value) String() string {
-	if Config.Exist(this.tag.Get("prefix")) {
-		return Config.Get(this.tag.Get("prefix")).(string)
+	if Config.Exist(this.Tag.Get("prefix")) {
+		return Config.Get(this.Tag.Get("prefix")).(string)
 	}
 	return ""
 }
