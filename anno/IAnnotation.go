@@ -37,7 +37,7 @@ func (this *Annotations) Append(anno Annotation) *Annotations {
 	return this
 }
 
-func (this *Annotations) Get(key string) interface{} {
+func (this *Annotations) Get(key string) Annotation {
 	return this.Value[key]
 }
 

@@ -19,6 +19,6 @@ func init() {
 	AnnoList.Append(new(Value))
 }
 
-func Get(key string) interface{} {
+func Get(key string) Annotation {
 	return AnnoList.Get(key)
 }
